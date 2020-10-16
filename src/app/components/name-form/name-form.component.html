@@ -1,0 +1,25 @@
+<ng-container [formGroup]="formGroup">
+  <div class="form-item">
+    <label for="lastname">Last name</label>
+    <input
+      type="text"
+      id="lastname"
+      placeholder="Last name"
+      [formControl]="lastname"
+    >
+    <div *ngIf="lastname.errors !== null" [ngTemplateOutlet]="resolveError('lastname', lastname)">
+    </div>
+  </div>
+  <div class="form-item">
+    <label for="prename">Pre name</label>
+    <input
+      type="text"
+      id="prename"
+      placeholder="Pre name"
+      [formControl]="prename"
+    >
+    <div *ngIf="prename.errors !== null">
+      {{ resolveError('prename', prename) }}
+    </div>
+  </div>
+</ng-container>

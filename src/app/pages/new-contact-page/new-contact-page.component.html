@@ -1,0 +1,21 @@
+<h4>
+  <u>New Contact</u>
+</h4>
+
+<form (ngSubmit)="onFormSubmit()" [formGroup]="form">
+
+  <ng-template #lastNameRenderer>
+    <span style="color: red">Mindestens {{ nameForm.get('lastname').errors.minlength?.requiredLength }} Zeichen nötig!</span>
+  </ng-template>
+
+  <app-name-form
+    [formGroup]="nameForm"
+    [errorResolver]="nameFormErrorResolver()"
+  ></app-name-form>
+  <app-address-form [formGroup]="addressForm"></app-address-form>
+
+  <div style="margin-top: 10px">
+    <button type="submit">Submit</button>
+    <button type="reset" style="margin-left: 10px">Reset</button>
+  </div>
+</form>

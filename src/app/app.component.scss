@@ -1,0 +1,24 @@
+.app-container {
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+}
+
+.content-container {
+  width: 100%;
+  height: 100%;
+  border-top: 1px dashed black;
+  padding-top: 10px;
+}
+
+.nav {
+  padding-bottom: 10px;
+
+  a:not(:first-child) {
+    padding-left: 10px;
+  }
+}
+
+.link-active {
+  color: black;
+}
